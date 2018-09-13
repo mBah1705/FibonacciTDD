@@ -7,13 +7,11 @@ namespace FibonacciTDD.Logic
 {
     public class FibonacciCalculator
     {
-        public int CalculateValue(int v)
+        public long CalculateValue(int v)
         {
-            if (v == 1)
+            if (v == 1 || v == 2)
                 return 1;
-            else
-                return v - 1;
-             
+            else return CalculateValue(v - 1) + CalculateValue(v - 2);
         }
     }
 }
