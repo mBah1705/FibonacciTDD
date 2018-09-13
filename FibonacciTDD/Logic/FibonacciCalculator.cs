@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace FibonacciTDD.Logic
+﻿namespace FibonacciTDD.Logic
 {
     public class FibonacciCalculator
     {
-        public long CalculateValue(int v)
+        public double CalculateValue(int v)
         {
             if (v == 1 || v == 2)
                 return 1;

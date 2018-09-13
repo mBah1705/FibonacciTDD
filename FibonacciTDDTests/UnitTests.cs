@@ -1,5 +1,6 @@
 using FibonacciTDD.Logic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Numerics;
 
 namespace FibonacciTDDTests
 {
@@ -40,5 +41,21 @@ namespace FibonacciTDDTests
             FibonacciCalculator Calculator = new FibonacciCalculator();
             Assert.AreEqual(5, Calculator.CalculateValue(5));
         }
+
+        [TestMethod]
+        public void Fibonacci_When6_ShouldReturn8()
+        {
+            FibonacciCalculator Calculator = new FibonacciCalculator();
+            Assert.AreEqual(8, Calculator.CalculateValue(6));
+        }
+
+
+        [TestMethod]
+        public void Fibonacci_When100_ShouldReturn354224848179261915075()
+        {
+            FibonacciCalculator Calculator = new FibonacciCalculator();
+            Assert.AreEqual(BigInteger.Parse("354224848179261915075"), Calculator.CalculateValue(100));
+        }
+
     }
 }
