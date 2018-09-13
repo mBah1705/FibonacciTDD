@@ -14,10 +14,10 @@ namespace FibonacciTDDTests
         }
 
         [TestMethod]
-        public void Fibonacci_When2_ShouldReturn2()
+        public void Fibonacci_When2_ShouldReturn1()
         {
             FibonacciCalculator Calculator = new FibonacciCalculator();
-            Assert.AreEqual(2, Calculator.CalculateValue(2));
+            Assert.AreEqual(1, Calculator.CalculateValue(2));
         }
     }
 }

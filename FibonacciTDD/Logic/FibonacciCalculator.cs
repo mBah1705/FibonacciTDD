@@ -9,7 +9,7 @@ namespace FibonacciTDD.Logic
     {
         public int CalculateValue(int v)
         {
-            return v;
+            return 1;
         }
     }
 }
