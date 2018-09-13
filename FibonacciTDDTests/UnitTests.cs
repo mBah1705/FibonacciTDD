@@ -19,5 +19,12 @@ namespace FibonacciTDDTests
             FibonacciCalculator Calculator = new FibonacciCalculator();
             Assert.AreEqual(1, Calculator.CalculateValue(2));
         }
+
+        [TestMethod]
+        public void Fibonacci_When3_ShouldReturn2()
+        {
+            FibonacciCalculator Calculator = new FibonacciCalculator();
+            Assert.AreEqual(2, Calculator.CalculateValue(3));
+        }
     }
 }
