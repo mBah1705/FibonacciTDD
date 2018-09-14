@@ -49,13 +49,20 @@ namespace FibonacciTDDTests
             Assert.AreEqual(8, Calculator.CalculateValue(6));
         }
 
+        [TestMethod]
+        public void Fibonacci_When20_ShouldReturn6765()
+        {
+            FibonacciCalculator Calculator = new FibonacciCalculator();
+            Assert.AreEqual(6765, Calculator.CalculateValue(20));
+        }
 
         [TestMethod]
         public void Fibonacci_When100_ShouldReturn354224848179261915075()
         {
+            var expected  = BigInteger.Parse("354224848179261915075");
             FibonacciCalculator Calculator = new FibonacciCalculator();
-            Assert.AreEqual(BigInteger.Parse("354224848179261915075"), Calculator.CalculateValue(100));
+            var result = Calculator.CalculateValue(100);
+            Assert.AreEqual(expected, result);
         }
-
     }
 }
