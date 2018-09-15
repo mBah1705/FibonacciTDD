@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Threading.Tasks;
+using FibonacciTDD.Logic;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -13,34 +15,35 @@ namespace FibonacciTDD.Controllers
     {
         // GET: api/Fibonacci
         [HttpGet]
-        public IEnumerable<string> Get()
+        public string Get()
         {
-            return new string[] { "value1", "value2" };
+            return "Use api/fibonacci/{root} to calculate the fibonacci value of a root value";
         }
 
-        // GET: api/Fibonacci/5
-        [HttpGet("{id}", Name = "Get")]
-        public string Get(int id)
+        // GET: api/fibonacci/5
+        [HttpGet("{root}", Name = "Get")]
+        public string Get(int root)
         {
-            return "value";
+            FibonacciCalculator Calculator = new FibonacciCalculator();
+            return Calculator.CalculateValue(root).ToString();
         }
 
-        // POST: api/Fibonacci
-        [HttpPost]
-        public void Post([FromBody] string value)
-        {
-        }
+        ////// POST: api/Fibonacci
+        //[HttpPost]
+        //public void Post([FromBody] string value)
+        //{
+        //}
 
-        // PUT: api/Fibonacci/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
+        //// PUT: api/Fibonacci/5
+        //[HttpPut("{id}")]
+        //public void Put(int id, [FromBody] string value)
+        //{
+        //}
 
-        // DELETE: api/ApiWithActions/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
+        //// DELETE: api/ApiWithActions/5
+        //[HttpDelete("{id}")]
+        //public void Delete(int id)
+        //{
+        //}
     }
 }

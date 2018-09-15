@@ -4,14 +4,12 @@ namespace FibonacciTDD.Logic
 {
     public class FibonacciCalculator
     {
-        public BigInteger CalculateValue(int v)
+        public string CalculateValue(int v)
         {
-            //if (v == 1 || v == 2)
-            //    return 1;
-            //else return CalculateValue(v - 1) + CalculateValue(v - 2);
-
-            if (v < 2)
-                return v;
+            if (v < 1 || v > 100)
+                return "Use a value between 0 and 100";
+            else if (v < 2)
+                return v.ToString();
 
             BigInteger[] f = new BigInteger[v + 1];
             f[0] = 0;
@@ -21,7 +19,7 @@ namespace FibonacciTDD.Logic
             {
                 f[i] = f[i - 1] + f[i - 2];
             }
-            return f[v];
+            return f[v].ToString();
         }
     }
 }
